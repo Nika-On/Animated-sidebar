@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #12d8fa;
+  --hover-color: #878cdf;
+  --colour-menu: #f2f2f2;
+  --dark-color: #000000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.overlay{
+  position: fixed; 
+  display: block; 
+  width: 0%;
+  height: 100%; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); 
+  z-index: 2; 
+  cursor: pointer;
+  transition: width 0.4s ease;
+}
+main img {
+  margin: 10px;
+  width: 500px;
+  height: 500px;
+}
+main p {
+  margin: 10px;
+  width: 70%;
+}
+aside {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll; /* enable scrolling if content overflows */
+}
+.toogle-container {
+  left: 90%;
+  width: 10%;
+}
+.menu {
+  width: 25%;
+  left: 75%;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in;
+}
+.menu .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.menu .content h4{
+    font-style: italic;
+    margin: 10px;
+}
+.menu .content nav ul li {
+  margin: 10px;
+  list-style: none;
+}
+.menu .content nav ul li a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #000000;
+}
+.menu .content ul li a:hover {
+  color: var(--hover-color);
+}
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: black;
+  transition: width 0.4s ease;
+}
+.hamburger:hover span {
+  background-color: var(--hover-color);
+}
+.hamburger:hover span:nth-child(1) {
+  width: 10px;
+}
+.close-symbol{
+  position: absolute;
+  top:2%;
+  left: 80%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.close-symbol:hover{
+  background-color: var(--hover-color);
+}
+.active {
+  transform: translateX(0%);
+}
+@media (max-width:768px){
+  main{
+    width: 80%;
+    padding: 5rem;
+  }
+  main img{
+    width: 9rem;
+    height: 7rem;
+  }
+  h1{
+    font-size: 24px;
+  }
+  .toogle-container{
+    width: 25%;
+    left: 75%;
+  }
+  .menu{
+    width: 100%;
+    left: 0%;
+  }
+  .overlay{
+    display: none;
+  }
+}
